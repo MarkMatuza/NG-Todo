@@ -1,0 +1,14 @@
+<h1>Todo-list</h1>
+<div>
+    <form [formGroup]="newTodoForm">
+        <input class="form-control" formControlName= "description">
+    </form>
+    <div>
+        <button [disabled]="!newTodoForm.valid" (click)="addTodo()">Add todo</button>
+    </div>
+</div>
+<div *ngFor = "let test of tests; let todoIndex = index">
+    {{ test.id }}  {{ test.description }}
+    <button (click)="deleteTodoItem(todoIndex, test.id)">Delete todo{{ index }}</button>
+    <a href="edit/{{ test.id }}" >Edit</a>
+</div>

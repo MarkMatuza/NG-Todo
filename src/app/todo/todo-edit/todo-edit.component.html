@@ -1,0 +1,9 @@
+<h1>Edit todo: {{ editTodoForm.get("id").value }}</h1>
+<div>
+    <form [formGroup]="editTodoForm">
+        <input class="form-control" formControlName= "description">
+    </form>
+    <div>
+        <button [disabled]="!editTodoForm.valid" (click)="editTodo()">Edit todo</button>
+    </div>
+</div>
